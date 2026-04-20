@@ -115,7 +115,7 @@ def cart_view(request):
     # total_amount = sum(item['price'] * item['quantity'] for item in request.session.get('cart', {}).values())
     total_amount = sum(item['price'] * item['quantity'] for item in cart.values())
     
-    return render(request, 'cart.html', {'categories': categories, 'total_amount': total_amount,'brands': brand, 'cart': cart})    
+    return render(request, 'cart.html', {'categories': categories, 'totpal_amount': total_amount,'brands': brand, 'cart': cart})    
 
 def update_cart(request, product_id, action):
     cart = request.session.get("cart", {})
